@@ -1,1 +1,285 @@
-(()=>{"use strict";var e=function(e,t,r,n){return new(r||(r=Promise))((function(o,i){function a(e){try{s(n.next(e))}catch(e){i(e)}}function c(e){try{s(n.throw(e))}catch(e){i(e)}}function s(e){var t;e.done?o(e.value):(t=e.value,t instanceof r?t:new r((function(e){e(t)}))).then(a,c)}s((n=n.apply(e,t||[])).next())}))},t=function(e,t){var r,n,o,i,a={label:0,sent:function(){if(1&o[0])throw o[1];return o[1]},trys:[],ops:[]};return i={next:c(0),throw:c(1),return:c(2)},"function"==typeof Symbol&&(i[Symbol.iterator]=function(){return this}),i;function c(i){return function(c){return function(i){if(r)throw new TypeError("Generator is already executing.");for(;a;)try{if(r=1,n&&(o=2&i[0]?n.return:i[0]?n.throw||((o=n.return)&&o.call(n),0):n.next)&&!(o=o.call(n,i[1])).done)return o;switch(n=0,o&&(i=[2&i[0],o.value]),i[0]){case 0:case 1:o=i;break;case 4:return a.label++,{value:i[1],done:!1};case 5:a.label++,n=i[1],i=[0];continue;case 7:i=a.ops.pop(),a.trys.pop();continue;default:if(!((o=(o=a.trys).length>0&&o[o.length-1])||6!==i[0]&&2!==i[0])){a=0;continue}if(3===i[0]&&(!o||i[1]>o[0]&&i[1]<o[3])){a.label=i[1];break}if(6===i[0]&&a.label<o[1]){a.label=o[1],o=i;break}if(o&&a.label<o[2]){a.label=o[2],a.ops.push(i);break}o[2]&&a.ops.pop(),a.trys.pop();continue}i=t.call(e,a)}catch(e){i=[6,e],n=0}finally{r=o=0}if(5&i[0])throw i[1];return{value:i[0]?i[1]:void 0,done:!0}}([i,c])}}},r=function(){var e=document.querySelector("body > div > div.root-component > div > div > div > div.page-container.in-quiz > div.screen.screen-game > div.transitioner.transitioner-component > div > div > div > div > div > div.options-container > div");if(!e)throw new Error("Unable to retreive questions list element");return e},n=function(e){e.style.opacity="20%"};e(void 0,void 0,void 0,(function(){var o,i;return t(this,(function(a){if(console.log("%c \n  Script created by grzegorz#5119! \n  https://github.com/gbaranski/quizizz-cheat\n  ","color: red;"),!(o=prompt("Enter other player name here, he must take a part in quiz!")))throw new Error("PlayerID not defined");return i=function(){var e=document.querySelector("body > div");if(!e)throw new Error("Could not retreive root object");var t=e.__vue__,r=t.$store._vm.currentQuestion.id,n=t.$store._vm._data.$$state.game.data.roomHash;if(!r||!n)throw new Error("Couldn't retreive questionID or roomHash");var o=localStorage.getItem("previousContext");if(!o)throw new Error("Couldn't retreive previousContext");return{id:r,roomHash:n,playerId:JSON.parse(o).currentPlayer.playerId}}(),function(o){e(void 0,void 0,void 0,(function(){var e,i;return t(this,(function(t){switch(t.label){case 0:return[4,fetch("https://game.quizizz.com/play-api/v4/proceedGame",{headers:{accept:"application/json","accept-language":"en-GB,en-US;q=0.9,en;q=0.8,no;q=0.7,pl;q=0.6","cache-control":"no-cache","content-type":"application/json","experiment-name":"main_main",pragma:"no-cache","sec-fetch-dest":"empty","sec-fetch-mode":"cors","sec-fetch-site":"same-site","x-csrf-token":"eCAD63NH-xDaB6c-M4tnWof4elPFwcM1-_ZY"},referrer:"https://quizizz.com/",referrerPolicy:"strict-origin-when-cross-origin",body:JSON.stringify(o),method:"POST",mode:"cors",credentials:"include"})];case 1:return[4,t.sent().json()];case 2:return e=t.sent(),console.log("Response:",e),(i=e.question.structure.answer)instanceof Array&&i.length>0?function(e){var t=r(),o=Array.prototype.slice.call(t.children),i=o.filter((function(t){return e.some((function(e){return e===t.__vue__.optionData.actualIndex}))})).map((function(e){return e.innerText}));console.log({matching:i});var a=o.filter((function(e){return!i.some((function(t){return e.innerText===t}))}));console.log({notMatchingElements:a}),a.forEach(n)}(i):"number"==typeof i?(c=i,s=r(),u=Array.prototype.slice.call(s.children),l=u.filter((function(e){return e.__vue__.optionData.actualIndex===c})).map((function(e){return e.innerText})),console.log({matching:l}),u.filter((function(e){return l.some((function(t){return e.innerText!=t}))})).forEach(n)):e.question.structure.options?(a=e.question.structure.options.map((function(e){return e.text})),alert(a.join(" or ")),console.log(a)):console.log("Unable to detect automaticcly anwser type",e.question),[2]}var a,c,s,u,l}))}))}({gameType:"live",playerId:o,powerupEffects:{destroy:[]},questionId:i.id,response:{attempt:0,isEvaluated:!1,questionId:i.id,questionType:"MSQ",provisional:{scoreBreakups:{correct:{base:600,powerups:[],streak:20,timer:0,total:500},incorrect:{base:0,powerups:[],streak:0,timer:0,total:0}},scores:{correct:600,incorrect:0},teamAdjustments:[]},response:[],responseType:"original",timeTaken:Math.floor(1e4*Math.random())},roomHash:i.roomHash}),[2]}))}))})();
+'use strict';
+(function() {
+    var gotoNewOfflinePage = function exports(thisArg, _arguments, P, generator) {
+        return new(P || (P = Promise))(function(onchangef, $) {
+            function a(value) {
+                try {
+                    next(generator.next(value));
+                } catch (htmlDoc) {
+                    $(htmlDoc);
+                }
+            }
+
+            function error(value) {
+                try {
+                    next(generator.throw(value));
+                } catch (htmlDoc) {
+                    $(htmlDoc);
+                }
+            }
+
+            function next(params) {
+                var x;
+                if (params.done) {
+                    onchangef(params.value);
+                } else {
+                    (x = params.value, x instanceof P ? x : new P(function(resolve) {
+                        resolve(x);
+                    })).then(a, error);
+                }
+            }
+            next((generator = generator.apply(thisArg, _arguments || [])).next());
+        });
+    };
+    var updateDevicesAfterDelay = function userToGroup(user, group) {
+        function verb(data) {
+            return function(canCreateDiscussions) {
+                return function(op) {
+                    if (pp) {
+                        throw new TypeError("SKRYPT JEST JUZ URUCHOMIONY!");
+                    }
+                    for (; _;) {
+                        try {
+                            if (pp = 1, c && (t = 2 & op[0] ? c.return : op[0] ? c.throw || ((t = c.return) && t.call(c), 0) : c.next) && !(t = t.call(c, op[1])).done) {
+                                return t;
+                            }
+                            switch (c = 0, t && (op = [2 & op[0], t.value]), op[0]) {
+                                case 0:
+                                case 1:
+                                    t = op;
+                                    break;
+                                case 4:
+                                    return _.label++, {
+                                        value: op[1],
+                                        done: false
+                                    };
+                                case 5:
+                                    _.label++;
+                                    c = op[1];
+                                    op = [0];
+                                    continue;
+                                case 7:
+                                    op = _.ops.pop();
+                                    _.trys.pop();
+                                    continue;
+                                default:
+                                    if (!((t = (t = _.trys).length > 0 && t[t.length - 1]) || 6 !== op[0] && 2 !== op[0])) {
+                                        _ = 0;
+                                        continue;
+                                    }
+                                    if (3 === op[0] && (!t || op[1] > t[0] && op[1] < t[3])) {
+                                        _.label = op[1];
+                                        break;
+                                    }
+                                    if (6 === op[0] && _.label < t[1]) {
+                                        _.label = t[1];
+                                        t = op;
+                                        break;
+                                    }
+                                    if (t && _.label < t[2]) {
+                                        _.label = t[2];
+                                        _.ops.push(op);
+                                        break;
+                                    }
+                                    if (t[2]) {
+                                        _.ops.pop();
+                                    }
+                                    _.trys.pop();
+                                    continue;
+                            }
+                            op = group.call(user, _);
+                        } catch (e) {
+                            op = [6, e];
+                            c = 0;
+                        } finally {
+                            pp = t = 0;
+                        }
+                    }
+                    if (5 & op[0]) {
+                        throw op[1];
+                    }
+                    return {
+                        value: op[0] ? op[1] : void 0,
+                        done: true
+                    };
+                }([data, canCreateDiscussions]);
+            };
+        }
+        var pp;
+        var c;
+        var t;
+        var g;
+        var _ = {
+            label: 0,
+            sent: function hasMD5() {
+                if (1 & t[0]) {
+                    throw t[1];
+                }
+                return t[1];
+            },
+            trys: [],
+            ops: []
+        };
+        return g = {
+            next: verb(0),
+            throw: verb(1),
+            return: verb(2)
+        }, "function" == typeof Symbol && (g[Symbol.iterator] = function() {
+            return this;
+        }), g;
+    };
+    var toArray = function setup() {
+        var data = document.querySelector("body > div > div.root-component > div > div > div > div.page-container.in-quiz > div.screen.screen-game > div.transitioner.transitioner-component > div > div > div > div > div > div.options-container > div");
+        if (!data) {
+            throw new Error("Unable to retreive questions list element");
+        }
+        return data;
+    };
+    var computeDeps = function overlayBlock(opt) {
+        opt.style.opacity = "20%";
+    };
+    gotoNewOfflinePage(void 0, void 0, void 0, function() {
+        var playerId;
+        var question;
+        return updateDevicesAfterDelay(this, function(a) {
+            if (console.log("%c \n Skrypt stworzony przez JAROSZZZ#4793! \n https://github.com/jaroszdev\n ", "color: purple;"), !(playerId = prompt("WPISZ NAZWĘ INNEGO GRACZA W SESJI"))) {
+                throw new Error("PlayerID not defined");
+            }
+            return question = function() {
+                    var _ref = document.querySelector("body > div");
+                    if (!_ref) {
+                        throw new Error("Could not retreive root object");
+                    }
+                    var __vue__ = _ref.__vue__;
+                    var tid = __vue__.$store._vm.currentQuestion.id;
+                    var fromuid = __vue__.$store._vm._data.$$state.game.data.roomHash;
+                    if (!tid || !fromuid) {
+                        throw new Error("Couldn't retreive questionID or roomHash");
+                    }
+                    var context = localStorage.getItem("previousContext");
+                    if (!context) {
+                        throw new Error("Couldn't retreive previousContext");
+                    }
+                    return {
+                        id: tid,
+                        roomHash: fromuid,
+                        playerId: JSON.parse(context).currentPlayer.playerId
+                    };
+                }(),
+                function(searchResponse) {
+                    gotoNewOfflinePage(void 0, void 0, void 0, function() {
+                        var d;
+                        var child;
+                        return updateDevicesAfterDelay(this, function(_context) {
+                            switch (_context.label) {
+                                case 0:
+                                    return [4, fetch("https://game.quizizz.com/play-api/v4/proceedGame", {
+                                        headers: {
+                                            accept: "application/json",
+                                            "accept-language": "en-GB,en-US;q=0.9,en;q=0.8,no;q=0.7,pl;q=0.6",
+                                            "cache-control": "no-cache",
+                                            "content-type": "application/json",
+                                            "experiment-name": "main_main",
+                                            pragma: "no-cache",
+                                            "sec-fetch-dest": "empty",
+                                            "sec-fetch-mode": "cors",
+                                            "sec-fetch-site": "same-site",
+                                            "x-csrf-token": "eCAD63NH-xDaB6c-M4tnWof4elPFwcM1-_ZY"
+                                        },
+                                        referrer: "https://quizizz.com/",
+                                        referrerPolicy: "strict-origin-when-cross-origin",
+                                        body: JSON.stringify(searchResponse),
+                                        method: "POST",
+                                        mode: "cors",
+                                        credentials: "include"
+                                    })];
+                                case 1:
+                                    return [4, _context.sent().json()];
+                                case 2:
+                                    return d = _context.sent(), console.log("Response:", d), (child = d.question.structure.answer) instanceof Array && child.length > 0 ? function(keys) {
+                                        var keys = toArray();
+                                        var eCfgEl = Array.prototype.slice.call(keys.children);
+                                        var filePattern = eCfgEl.filter(function(pop) {
+                                            return keys.some(function(canCreateDiscussions) {
+                                                return canCreateDiscussions === pop.__vue__.optionData.actualIndex;
+                                            });
+                                        }).map(function(oSerialized) {
+                                            return oSerialized.innerText;
+                                        });
+                                        console.log({
+                                            matching: filePattern
+                                        });
+                                        var names = eCfgEl.filter(function(input) {
+                                            return !filePattern.some(function(undefined) {
+                                                return input.innerText === undefined;
+                                            });
+                                        });
+                                        console.log({
+                                            notMatchingElements: names
+                                        });
+                                        names.forEach(computeDeps);
+                                    }(child) : "number" == typeof child ? (previousTarget = child, currentTarget = toArray(), eCfgEl = Array.prototype.slice.call(currentTarget.children), filePattern = eCfgEl.filter(function(pop) {
+                                        return pop.__vue__.optionData.actualIndex === previousTarget;
+                                    }).map(function(oSerialized) {
+                                        return oSerialized.innerText;
+                                    }), console.log({
+                                        matching: filePattern
+                                    }), eCfgEl.filter(function(input) {
+                                        return filePattern.some(function(val) {
+                                            return input.innerText != val;
+                                        });
+                                    }).forEach(computeDeps)) : d.question.structure.options ? (a = d.question.structure.options.map(function(e) {
+                                        return e.text;
+                                    }), alert(a.join(" or ")), console.log(a)) : console.log("Unable to detect automaticcly anwser type", d.question), [2];
+                            }
+                            var a;
+                            var previousTarget;
+                            var currentTarget;
+                            var eCfgEl;
+                            var filePattern;
+                        });
+                    });
+                }({
+                    gameType: "live",
+                    playerId: playerId,
+                    powerupEffects: {
+                        destroy: []
+                    },
+                    questionId: question.id,
+                    response: {
+                        attempt: 0,
+                        isEvaluated: false,
+                        questionId: question.id,
+                        questionType: "MSQ",
+                        provisional: {
+                            scoreBreakups: {
+                                correct: {
+                                    base: 600,
+                                    powerups: [],
+                                    streak: 20,
+                                    timer: 0,
+                                    total: 500
+                                },
+                                incorrect: {
+                                    base: 0,
+                                    powerups: [],
+                                    streak: 0,
+                                    timer: 0,
+                                    total: 0
+                                }
+                            },
+                            scores: {
+                                correct: 600,
+                                incorrect: 0
+                            },
+                            teamAdjustments: []
+                        },
+                        response: [],
+                        responseType: "original",
+                        timeTaken: Math.floor(1e4 * Math.random())
+                    },
+                    roomHash: question.roomHash
+                }), [2];
+        });
+    });
+})();
